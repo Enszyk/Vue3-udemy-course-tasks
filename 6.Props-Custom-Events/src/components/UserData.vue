@@ -3,11 +3,11 @@
     <form @submit.prevent="submitForm">
       <div>
         <label>Name</label>
-        <input type="text" />
+        <input type="text" placeholder="Name" v-model="enteredName" />
       </div>
       <div>
         <label>Age</label>
-        <input type="number" />
+        <input type="number" placeholder="Age" v-model="enteredAge" />
       </div>
       <div>
         <button>Set User</button>
@@ -18,16 +18,28 @@
 
 <script>
 export default {
+  data() {
+    return {
+      enteredName: "",
+      enteredAge: null,
+    };
+  },
+  emits: ['set-user-data'],
   methods: {
     submitForm() {
-      console.log('XD');
-    }
-  }
+      this.$emit("set-user-data", {
+        name: this.enteredName,
+        age: this.enteredAge,
+      });
+      this.enteredName = "";
+      this.enteredAge = null;
+    },
+  },
 };
 </script>
 
 <style scoped>
-#app{
+#app {
   border: 2px solid #333;
   padding: 1rem;
   padding-bottom: 0rem;
@@ -53,5 +65,4 @@ export default {
   border: 2px solid #333;
   padding: 0.5rem;
 }
-
 </style>

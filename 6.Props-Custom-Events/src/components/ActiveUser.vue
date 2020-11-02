@@ -12,7 +12,6 @@ export default {
 </script>
 
 <style scoped>
-
 #app h2,
 h3 {
   color: #eee;

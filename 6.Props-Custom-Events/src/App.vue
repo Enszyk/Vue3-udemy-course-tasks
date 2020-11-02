@@ -1,9 +1,7 @@
 <template>
   <div id="app">
-    <active-user 
-    :user="user"
-    />
-    <user-data />
+    <active-user :user="user" />
+    <user-data @set-user-data="setNewUserData" />
   </div>
 </template>
 
@@ -12,10 +10,15 @@ export default {
   data() {
     return {
       user: {
-        name: "Norbert",
-        age: 20, 
-      }
+        name: "",
+        age: null,
+      },
     };
+  },
+  methods: {
+    setNewUserData(user) {
+      this.user = user;
+    },
   },
 };
 </script>
