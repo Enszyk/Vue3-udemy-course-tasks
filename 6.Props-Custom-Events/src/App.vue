@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <user-data />
     <active-user 
     :user="user"
     />
+    <user-data />
   </div>
 </template>
 
@@ -27,7 +27,7 @@ export default {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   margin: 60px auto;
+  width: 60%;
 }
 </style>
