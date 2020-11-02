@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <h1>{{ name }}</h1>
+    <user-data />
+    <active-user 
+    :user="user"
+    />
   </div>
 </template>
 
@@ -8,7 +11,10 @@
 export default {
   data() {
     return {
-      name: "Norbert",
+      user: {
+        name: "Norbert",
+        age: 20, 
+      }
     };
   },
 };
